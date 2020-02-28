@@ -11,7 +11,7 @@ screen = pygame.display.set_mode((800,600))
 
 #Adding BackGround Image
 background = pygame.image.load(os.getcwd() + "/background.png")
-mixer.music.load("C:/Users/Jaswanth/Desktop/Curriculum/MINI PROJECT/SpaceShooter_Theme.wav")
+mixer.music.load(os.getcwd() + "/SpaceShooter_Theme.wav")
 mixer.music.play(-1)
 
 #setting game icon and caption
@@ -103,7 +103,7 @@ while running:
             if event.key == pygame.K_SPACE:
                 if bullet_state is "ready":
                     bullet_state = "fire"
-                    bullet_music = mixer.Sound("C:/Users/Jaswanth/Desktop/Curriculum/MINI PROJECT/laser1.wav")
+                    bullet_music = mixer.Sound(os.getcwd() + "/laser1.wav")
                     bullet_music.play()
                     bulletX = playerX
                     fire_bullet(bulletX,bulletY)
@@ -137,7 +137,7 @@ while running:
             
         collision = isCollision(enemyX[i], enemyY[i], bulletX, bulletY)
         if collision:
-            collision_music = mixer.Sound("C:/Users/Jaswanth/Desktop/Curriculum/MINI PROJECT/small_explosion.wav")
+            collision_music = mixer.Sound(os.getcwd() + "/small_explosion.wav")
             collision_music.play()
             bulletY = playerY
             bullet_state = "ready"
